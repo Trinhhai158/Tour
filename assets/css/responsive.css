@@ -1,8 +1,10 @@
 .menu_tablet_and_mobile {
     display: none;
 }
-/* adr */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
+    .content_header {
+        justify-content: space-between;
+    }
     .menu_tablet_and_mobile {
         display: block;
         position: relative;
@@ -45,7 +47,9 @@
         color: white;
         font-size: 1.8rem;
     }
-
+}
+/* adr */
+@media only screen and (max-width: 768px) {
     .container {
         width: 100vw;
     }

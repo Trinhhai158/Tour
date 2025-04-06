@@ -59,7 +59,7 @@ const handleWaveScroll = () => {
         wave.style.opacity = 0;
         setTimeout(() => {
             wave.style.display = "none";
-        }, 2000);
+        }, 3000);
     } else {
         tourItem.forEach((rs, i) => {
             rs.style.opacity = 0;

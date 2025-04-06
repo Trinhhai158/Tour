@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     width: 100vw;
+    font-family: "Montserrat", sans-serif;
 }
 body,
 html {
@@ -81,13 +82,14 @@ a {
     color: black;
     white-space: nowrap;
     font-size: 3rem;
-    width: 100%;
+    font-weight: 900;
+    width: 0;
     animation: anmText_robot-model 14.2s linear infinite;
 }
 
 @keyframes anmText_robot-model {
     50% {
-        width: 0%;
+        width: 100%;
     }
 }
 .content_model_robot .div_btn {
@@ -328,7 +330,7 @@ a {
     width: calc((100% / 3) - 20px);
     box-shadow: 0 0 15px black;
     opacity: 0;
-    transition: all 4.6s linear;
+    transition: all 1.6s linear;
 }
 .tour .content img {
     width: 100%;
@@ -338,7 +340,7 @@ a {
     border-top-right-radius: 15px;
 }
 .tour_item:hover {
-    transform: scale(1.03);
+    box-shadow: 0 0 15px peru, 0 0 25px peru, 0 0 35px peru;
 }
 .tour .content_desc {
     margin-top: 20px;
@@ -368,6 +370,8 @@ a {
     font-size: 2.2rem;
     font-weight: 800;
     line-height: 1.6;
+    min-height: 100px;
+    max-height: 100px;
 }
 .tour .titile:hover {
     cursor: pointer;
@@ -400,6 +404,7 @@ a {
     white-space: nowrap;
     margin-left: 5px;
 }
+
 .tour .price .price-old {
     text-decoration: line-through red 3px;
     margin-left: 9px;
@@ -522,6 +527,8 @@ a {
     color: pink;
     font-weight: 600;
     line-height: 1.7;
+    overflow-y: auto;
+    max-height: 280px;
 }
 /* form */
 .form-container {
