@@ -1,0 +1,114 @@
+.menu_tablet_and_mobile {
+    display: none;
+}
+/* adr */
+@media only screen and (max-width: 768px) {
+    .menu_tablet_and_mobile {
+        display: block;
+        position: relative;
+    }
+    .menu_tablet_and_mobile input {
+        display: none;
+    }
+    .menu_tablet_and_mobile input:checked ~ ul {
+        display: block;
+    }
+    .list_tablet-mobile li:nth-child(1):hover {
+        background: #ff5252;
+    }
+    .list_tablet-mobile li:nth-child(2):hover {
+        background: #00d2d3;
+    }
+    .list_tablet-mobile li:nth-child(3):hover {
+        background: #10ac84;
+    }
+    .list_tablet-mobile li:nth-child(4):hover {
+        background: #ff9f43;
+    }
+    .list_tablet-mobile li:nth-child(5):hover {
+        background: #341f97;
+    }
+    .menu_tablet_and_mobile i {
+        font-size: 4rem;
+        cursor: pointer;
+    }
+    .menu_tablet_and_mobile ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+    .menu_tablet_and_mobile ul li {
+        padding: 20px 40px;
+        border: 1px solid black;
+        transition: background-color 0.3s ease;
+        color: white;
+        font-size: 1.8rem;
+    }
+
+    .container {
+        width: 100vw;
+    }
+    /* Header */
+    .header .list,
+    .header .btn_header {
+        display: none;
+    }
+    /* plane */
+    .plane {
+        display: none;
+    }
+    .robot {
+        display: none;
+    }
+    .wave {
+        display: none;
+    }
+    .banner .content .colum_left .titile {
+        font-size: 3.8rem;
+    }
+    #Tour {
+        font-size: 4rem;
+    }
+    .tour_item {
+        width: calc((100% / 1) - 20px);
+    }
+    #Contact {
+        font-size: 2.7rem;
+        animation: none;
+    }
+    .contact .item {
+        flex-basis: calc(100% / 1 - 30px);
+    }
+    .footer-container {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer-section {
+        margin: 20px 0;
+    }
+}
+/* tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Header */
+    .header .list,
+    .header .btn_header {
+        display: none;
+    }
+    .robot {
+        display: none;
+    }
+    .tour_item {
+        width: calc((100% / 2) - 20px);
+    }
+    .plane {
+        display: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer-section {
+        margin: 20px 0;
+    }
+}
