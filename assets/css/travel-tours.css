@@ -1,0 +1,332 @@
+/* travel-reset.css */
+/* Reset và base styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* travel-responsive.css */
+/* Responsive rules */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* travel-tours.css */
+/* Main styles */
+.travel-navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.travel-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.travel-logo {
+    height: 40px;
+}
+
+.travel-nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.travel-nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.travel-nav-link:hover {
+    color: #4e6bff;
+}
+
+.travel-main {
+    padding: 60px 0;
+}
+
+.travel-section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #222;
+}
+
+/* Tour Cards */
+.travel-tour-card-wrapper {
+    margin-bottom: 30px;
+}
+
+.travel-tour-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.travel-tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.travel-tour-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.travel-tour-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.travel-tour-card:hover .travel-tour-image img {
+    transform: scale(1.05);
+}
+
+.travel-tour-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4e6bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.travel-tour-content {
+    padding: 20px;
+}
+
+.travel-tour-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.travel-tour-duration,
+.travel-tour-group,
+.travel-tour-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.travel-tour-rating i {
+    color: #ffc107;
+}
+
+.travel-tour-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.travel-tour-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.travel-tour-location i {
+    color: #4e6bff;
+}
+
+.travel-tour-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.travel-tour-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.travel-current-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4e6bff;
+}
+
+.travel-original-price {
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.travel-btn {
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.travel-btn-primary {
+    background-color: #4e6bff;
+    color: white;
+}
+
+.travel-btn-primary:hover {
+    background-color: #3a56d4;
+}
+
+/* Footer */
+.travel-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.travel-footer-section {
+    margin-bottom: 30px;
+}
+
+.travel-footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.travel-footer-about {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.travel-footer-heading {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.travel-footer-links li {
+    margin-bottom: 10px;
+}
+
+.travel-footer-links a {
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.travel-footer-links a:hover {
+    color: #4e6bff;
+}
+
+.travel-contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #bbb;
+}
+
+.travel-contact-info i {
+    width: 20px;
+    color: #4e6bff;
+}
+
+.travel-copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .travel-nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .travel-nav-menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .travel-section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .travel-tour-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}

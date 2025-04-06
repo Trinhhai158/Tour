@@ -420,6 +420,19 @@ a {
 
 .tour .btn {
 }
+.tour .more {
+    margin-top: 30px;
+}
+.tour .more a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f44c28;
+    font-size: 2rem;
+}
+.tour .more a span {
+    margin-left: 15px;
+}
 /* wave */
 .wave {
     background-image: url(../imgs/wave-2.png);

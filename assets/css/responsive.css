@@ -12,19 +12,19 @@
     .menu_tablet_and_mobile input:checked ~ ul {
         display: block;
     }
-    .list_tablet-mobile li:nth-child(1):hover {
+    .list_tablet-mobile li:nth-child(1) {
         background: #ff5252;
     }
-    .list_tablet-mobile li:nth-child(2):hover {
+    .list_tablet-mobile li:nth-child(2) {
         background: #00d2d3;
     }
-    .list_tablet-mobile li:nth-child(3):hover {
+    .list_tablet-mobile li:nth-child(3) {
         background: #10ac84;
     }
-    .list_tablet-mobile li:nth-child(4):hover {
+    .list_tablet-mobile li:nth-child(4) {
         background: #ff9f43;
     }
-    .list_tablet-mobile li:nth-child(5):hover {
+    .list_tablet-mobile li:nth-child(5) {
         background: #341f97;
     }
     .menu_tablet_and_mobile i {
@@ -40,10 +40,13 @@
     }
     .menu_tablet_and_mobile ul li {
         padding: 20px 40px;
-        border: 1px solid black;
         transition: background-color 0.3s ease;
         color: white;
         font-size: 1.8rem;
+    }
+    .menu_tablet_and_mobile ul li a {
+        text-decoration: none;
+        color: white;
     }
 }
 /* adr */
