@@ -163,6 +163,7 @@ a {
 }
 .content_header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 .content_header .logo {
@@ -181,7 +182,6 @@ a {
     }
 }
 .header nav {
-    margin-left: 390px;
 }
 .header .list {
     display: flex;
@@ -202,7 +202,6 @@ a {
 }
 
 .header .btn_header {
-    margin-left: auto;
 }
 
 /* Banner */

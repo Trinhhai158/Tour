@@ -2,9 +2,6 @@
     display: none;
 }
 @media only screen and (max-width: 1024px) {
-    .content_header {
-        justify-content: space-between;
-    }
     .menu_tablet_and_mobile {
         display: block;
         position: relative;
@@ -33,6 +30,7 @@
     .menu_tablet_and_mobile i {
         font-size: 4rem;
         cursor: pointer;
+        margin: 0 20px;
     }
     .menu_tablet_and_mobile ul {
         display: none;
@@ -52,6 +50,9 @@
 @media only screen and (max-width: 768px) {
     .container {
         width: 100vw;
+    }
+    .content_header {
+        justify-content: space-between;
     }
     /* Header */
     .header .list,
