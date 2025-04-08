@@ -22,8 +22,6 @@
             rel="stylesheet"
         />
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/travel-reset.css" />
-        <link rel="stylesheet" href="../assets/css/travel-responsive.css" />
         <link rel="stylesheet" href="../assets/css/travel-tours.css" />
     </head>
     <body>
@@ -39,10 +37,8 @@
                 </a>
                 <div class="travel-nav-menu">
                     <a href="../index.html" class="travel-nav-link">Home</a>
-                    <a href="#" class="travel-nav-link">Tours</a>
-                    <a href="#" class="travel-nav-link">Destinations</a>
-                    <a href="#" class="travel-nav-link">About</a>
-                    <a href="#" class="travel-nav-link">Contact</a>
+                    <a href="#" class="travel-nav-link">Giỏ Hàng Tours</a>
+                    <a href="#" class="travel-nav-link">Thùng rác</a>
                 </div>
             </div>
         </nav>
@@ -50,481 +46,49 @@
         <!-- Main Content -->
         <main class="travel-main">
             <section class="travel-tour-section">
-                <div class="container">
+                <div class="travel-search-box">
+                    <input
+                        type="text"
+                        id="tourSearchInput"
+                        class="travel-search-input"
+                        placeholder="Search tours by name..."
+                    />
+                    <button
+                        id="searchButton"
+                        class="travel-btn travel-btn-primary"
+                    >
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="travel-tour-container container">
+                    <div id="searchResults" class="travel-search-results"></div>
                     <h1 class="travel-section-title">Our Featured Tours</h1>
-                    <div class="row">
-                        <!-- Tour Card 1 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-
-                        <!-- Tour Card 2 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 3 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 4 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 5 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 6 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 7 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 8 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Tour Card 9 -->
-                        <div class="col-md-6 col-lg-4 travel-tour-card-wrapper">
-                            <article class="travel-tour-card">
-                                <div class="travel-tour-image">
-                                    <img
-                                        src="../assets/imgs/img_tour-1.jpg"
-                                        alt="Halong Bay Tour"
-                                    />
-                                    <span class="travel-tour-badge"
-                                        >BEST SELLER</span
-                                    >
-                                </div>
-                                <div class="travel-tour-content">
-                                    <div class="travel-tour-meta">
-                                        <div class="travel-tour-duration">
-                                            <i class="fas fa-calendar-days"></i>
-                                            <span>3 days</span>
-                                        </div>
-                                        <div class="travel-tour-group">
-                                            <i class="fas fa-users"></i>
-                                            <span>Max 15</span>
-                                        </div>
-                                        <div class="travel-tour-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.9</span>
-                                        </div>
-                                    </div>
-                                    <h2 class="travel-tour-title">
-                                        Halong Bay Cruise Adventure
-                                    </h2>
-                                    <div class="travel-tour-location">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Quang Ninh, Vietnam</span>
-                                    </div>
-                                    <div class="travel-tour-footer">
-                                        <div class="travel-tour-price">
-                                            <span class="travel-current-price"
-                                                >$199</span
-                                            >
-                                            <span class="travel-original-price"
-                                                >$299</span
-                                            >
-                                        </div>
-                                        <button
-                                            class="travel-btn travel-btn-primary"
-                                        >
-                                            View Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+                    <div class="travel-tour-row row"></div>
                 </div>
             </section>
+
+            <div class="booked-tours-container">
+                <h2>Tour Đã Đặt</h2>
+                <table class="booked-tours-table">
+                    <thead>
+                        <tr>
+                            <th>Ảnh</th>
+                            <th>Tên Tour</th>
+                            <th>Giá</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booked-tours-list">
+                        <!-- Dữ liệu sẽ được thêm bằng JS -->
+                    </tbody>
+                </table>
+                <!-- Phân trang -->
+                <div class="pagination" id="pagination">
+                    <button id="prev-page">← Trước</button>
+                    <span id="page-numbers"></span>
+                    <button id="next-page">Sau →</button>
+                </div>
+            </div>
         </main>
 
         <!-- Footer -->
@@ -533,7 +97,7 @@
                 <div class="row">
                     <div class="col-md-4 travel-footer-section">
                         <img
-                            src="../assets/imgs/travel-explorer-logo-white.png"
+                            src="../assets/imgs/robot-2.gif"
                             alt="Travel Explorer"
                             class="travel-footer-logo"
                         />
@@ -576,6 +140,6 @@
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS -->
-        <script src="../assets/js/travel-scripts.js"></script>
+        <script src="../js/travel-scripts.js"></script>
     </body>
 </html>

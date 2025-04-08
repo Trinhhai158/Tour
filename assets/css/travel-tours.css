@@ -94,6 +94,7 @@ img {
 .travel-nav-link {
     font-weight: 500;
     transition: color 0.3s;
+    /* margin: 0 15px; */
 }
 
 .travel-nav-link:hover {
@@ -112,6 +113,10 @@ img {
 }
 
 /* Tour Cards */
+.travel-tour-row {
+    overflow-y: auto;
+    max-height: 600px;
+}
 .travel-tour-card-wrapper {
     margin-bottom: 30px;
 }
@@ -243,6 +248,167 @@ img {
     background-color: #3a56d4;
 }
 
+.travel-book-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.travel-book-button:hover {
+    background-color: #e67100;
+    transform: translateY(-2px);
+}
+
+.travel-book-button i {
+    margin-right: 8px;
+}
+/* Style card tour */
+.travel-tour-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.travel-tour-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.travel-tour-content {
+    padding: 15px;
+}
+
+.travel-tour-price {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.travel-current-price {
+    color: #ff7b00;
+    font-size: 1.2em;
+}
+
+.travel-original-price {
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+
+.travel-book-button {
+    background: #ff7b00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style bảng tour đã đặt */
+.booked-tours-container h2 {
+    margin-top: 100px;
+    text-align: center;
+}
+.booked-tours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.booked-tours-table th,
+.booked-tours-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.booked-tours-table th {
+    background-color: #f5f5f5;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination button.active {
+    background: #ff7b00;
+    color: white;
+    border-color: #ff7b00;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-icon {
+    font-size: 60px;
+    color: #4caf50;
+    margin: 20px 0;
+}
+
 /* Footer */
 .travel-footer {
     background-color: #222;
@@ -329,4 +495,44 @@ img {
         gap: 15px;
         align-items: flex-start;
     }
+}
+
+/* Search Section Styles */
+.travel-search-section {
+    padding: 30px 0;
+    background-color: #f8f9fa;
+    margin-bottom: 40px;
+}
+
+.travel-search-box {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.travel-search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.travel-search-input:focus {
+    outline: none;
+}
+
+#searchButton {
+    border-radius: 0;
+    padding: 12px 25px;
+}
+
+.travel-search-results {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
 }
