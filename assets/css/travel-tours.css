@@ -1,8 +1,6 @@
 /* travel-reset.css */
 /* Reset và base styles */
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,6 +21,7 @@ a {
 ul,
 ol {
     list-style: none;
+    padding: 0;
 }
 
 img {
@@ -314,6 +313,17 @@ img {
 }
 
 /* Style bảng tour đã đặt */
+.booked-tours-container-table {
+    margin-top: 30px;
+    height: 400px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.booked-tours-container-table .booked-tours-table thead {
+    position: sticky;
+    top: 0;
+}
 .booked-tours-container h2 {
     margin-top: 100px;
     text-align: center;
@@ -321,7 +331,6 @@ img {
 .booked-tours-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .booked-tours-table th,
@@ -333,6 +342,15 @@ img {
 
 .booked-tours-table th {
     background-color: #f5f5f5;
+}
+.booked-tours-table thead tr th {
+    text-align: center;
+}
+#booked-tours-list tr td {
+    text-align: center;
+}
+tbody tr .not_booked-tour {
+    text-align: center;
 }
 
 .delete-btn {

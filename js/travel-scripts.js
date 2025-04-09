@@ -163,7 +163,7 @@ function showTours(tourList) {
                 }
               </div>
             </div>
-            <button class="travel-book-button" data-tour-id="${tour.id}">
+            <button class="travel-book-button" data-tour_id="${tour.id}">
               <i class="fas fa-ticket-alt"></i> Đặt Tour Ngay
             </button>
           </div>
@@ -209,9 +209,10 @@ travelInput.addEventListener("input", searchTours);
 let bookedTours = JSON.parse(localStorage.getItem("bookedTours")) || [];
 
 // Hàm đặt tour
-function bookTour(tourId) {
-    const tour = tours.find((t) => t.id == tourId);
-    if (!tour) return;
+
+const handleBookBtn = (e) => {
+    const tourBookId = e.target.dataset.tour_id;
+    const tour = tours.find((t) => t.id == tourBookId);
 
     bookedTours.push({
         id: tour.id,
@@ -222,112 +223,48 @@ function bookTour(tourId) {
 
     localStorage.setItem("bookedTours", JSON.stringify(bookedTours));
     renderBookedTours();
-}
+};
+const bookBtn = document.querySelectorAll(".travel-book-button");
+bookBtn.forEach((rs) => {
+    rs.addEventListener("click", handleBookBtn);
+});
 
 // Hàm hiển thị tour đã đặt
 function renderBookedTours() {
     const container = document.getElementById("booked-tours-list");
-    container.innerHTML = bookedTours
-        .map(
-            (tour) => `
-    <tr>
-      <td><img src="${tour.image}" alt="${tour.title}" width="80"></td>
-      <td>${tour.title}</td>
-      <td>$${tour.currentPrice}</td>
-      <td>
-        <button class="delete-btn" data-tour-id="${tour.id}">Xoá</button>
-      </td>
-    </tr>
-  `
-        )
-        .join("");
+    if (bookedTours.length > 0) {
+        container.innerHTML = bookedTours
+            .map(
+                (tour) => `
+        <tr>
+          <td><img src="${tour.image}" alt="${tour.title}" width="80"></td>
+          <td>${tour.title}</td>
+          <td>$${tour.currentPrice}</td>
+          <td>
+            <button class="delete-btn" data-tour-id="${tour.id}">Xoá</button>
+          </td>
+        </tr>
+      `
+            )
+            .join("");
+    } else {
+        container.innerHTML = ` <tr>
+        <td colspan=4 class="not_booked-tour-list"> bạn chưa đặt tour nào</td>
+      </tr>`;
+    }
 }
 
-// Xử lý xoá tour
+// xoá item trong danh sách tours
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
         const tourId = e.target.dataset.tourId;
+        console.log(tourId);
+
         bookedTours = bookedTours.filter((tour) => tour.id != tourId);
         localStorage.setItem("bookedTours", JSON.stringify(bookedTours));
         renderBookedTours();
-    }
-
-    if (e.target.classList.contains("travel-book-button")) {
-        bookTour(e.target.dataset.tourId);
     }
 });
 
 // Load dữ liệu khi trang web được mở
 document.addEventListener("DOMContentLoaded", renderBookedTours);
-
-// Cấu hình phân trang
-const rowsPerPage = 3;
-let currentPage = 1;
-
-// Hàm hiển thị tour đã đặt (có phân trang)
-function renderBookedTours() {
-    const container = document.getElementById("booked-tours-list");
-    container.innerHTML = "";
-
-    const start = (currentPage - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-    const paginatedTours = bookedTours.slice(start, end);
-
-    if (paginatedTours.length === 0) {
-        container.innerHTML = `<tr><td colspan="4">Bạn chưa đặt tour nào</td></tr>`;
-    } else {
-        container.innerHTML = paginatedTours
-            .map(
-                (tour) => `
-      <tr>
-        <td><img src="${tour.image}" width="60"></td>
-        <td>${tour.title}</td>
-        <td>$${tour.currentPrice}</td>
-        <td><button class="delete-btn" data-tour-id="${tour.id}">Xoá</button></td>
-      </tr>
-    `
-            )
-            .join("");
-    }
-
-    renderPagination();
-}
-
-// Hàm hiển thị phân trang
-function renderPagination() {
-    const pageCount = Math.ceil(bookedTours.length / rowsPerPage);
-    const pageNumbers = document.getElementById("page-numbers");
-    pageNumbers.innerHTML = "";
-
-    for (let i = 1; i <= pageCount; i++) {
-        const pageBtn = document.createElement("button");
-        pageBtn.textContent = i;
-        if (i === currentPage) {
-            pageBtn.classList.add("active");
-        }
-        pageBtn.addEventListener("click", () => {
-            currentPage = i;
-            renderBookedTours();
-        });
-        pageNumbers.appendChild(pageBtn);
-    }
-
-    // Ẩn nút prev/next nếu không cần
-    document.getElementById("prev-page").disabled = currentPage === 1;
-    document.getElementById("next-page").disabled = currentPage === pageCount;
-}
-
-// Xử lý nút prev/next
-document.getElementById("prev-page").addEventListener("click", () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderBookedTours();
-    }
-});
-
-document.getElementById("next-page").addEventListener("click", () => {
-    if (currentPage * rowsPerPage < bookedTours.length) {
-        currentPage++;
-        renderBookedTours();
-    }
-});
