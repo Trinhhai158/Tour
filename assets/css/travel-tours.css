@@ -86,16 +86,43 @@ a {
 .travel-nav-link:hover {
     color: #4e6bff;
 }
-
+.travel-nav-link i {
+    font-size: 4rem;
+    animation: anmIconBack 1.2s linear infinite;
+}
+@keyframes anmIconBack {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+}
 .travel-main {
     padding: 60px 0;
 }
 
 .travel-section-title {
     text-align: center;
+    font-weight: 900;
     margin-bottom: 50px;
     font-size: 4.9rem;
-    color: #222;
+    color: transparent;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: anmTitle 2s linear infinite;
+}
+
+@keyframes anmTitle {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
 }
 
 /* Tour Cards */
