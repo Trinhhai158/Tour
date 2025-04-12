@@ -679,6 +679,8 @@ textarea {
 }
 .evaluation_Items {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     overflow: hidden;
     padding: 30px;

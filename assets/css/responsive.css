@@ -72,6 +72,9 @@
     .wave {
         display: none;
     }
+    .banner .content .colum_right span {
+        font-size: 3rem;
+    }
     .banner .content .colum_left .titile {
         font-size: 3.8rem;
     }
@@ -87,6 +90,10 @@
     }
     .contact .item {
         flex-basis: calc(100% / 1 - 30px);
+    }
+    .evaluation_Items .evaluation_Item {
+        margin: 15px 10px;
+        width: calc(100% / 1 - 20px);
     }
     .footer-container {
         flex-direction: column;
@@ -112,6 +119,7 @@
     .plane {
         display: none;
     }
+
     .footer-container {
         flex-direction: column;
         justify-content: space-around;
