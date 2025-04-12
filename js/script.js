@@ -4,6 +4,7 @@ const tourItem = document.querySelectorAll(".tour_item");
 const plan = document.querySelector(".plane");
 const titileTour = document.getElementById("Tour");
 const textModelRobot = document.querySelector(".text_model_robot");
+const evaluationItem = document.querySelectorAll(".evaluation_Item");
 
 const handlePlan = () => {
     const xPlan = Math.floor(Math.random() * (window.innerWidth - 200));
@@ -48,8 +49,10 @@ if (robot) {
 // Hàm xử lý kéo thanh kéo scroll
 
 const handleWaveScroll = () => {
-    const top = window.scrollY;
-    if (top > 280) {
+    const top = Math.floor(window.scrollY);
+    // console.log(top);
+
+    if (top > 280 && top < 3100) {
         titileTour.style.transform = "rotateZ(4deg)";
         titileTour.style.opacity = 1;
         tourItem.forEach((rs, i) => {
@@ -60,6 +63,15 @@ const handleWaveScroll = () => {
         setTimeout(() => {
             wave.style.display = "none";
         }, 3000);
+        evaluationItem[0].style.transform = "translateX(-100%)";
+        evaluationItem[2].style.transform = "translateX(100%)";
+    } else if (top > 3100) {
+        evaluationItem[0].style.transform = "translateX(0)";
+        evaluationItem[2].style.transform = "translateX(0)";
+        tourItem.forEach((rs, i) => {
+            rs.style.opacity = 0;
+            rs.style.transform = "scale(0)";
+        });
     } else {
         tourItem.forEach((rs, i) => {
             rs.style.opacity = 0;
@@ -67,6 +79,8 @@ const handleWaveScroll = () => {
         });
         titileTour.style.transform = "rotateZ(0)";
         titileTour.style.opacity = 0;
+        evaluationItem[0].style.transform = "translateX(-100%)";
+        evaluationItem[2].style.transform = "translateX(100%)";
     }
 };
 

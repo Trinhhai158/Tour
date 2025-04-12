@@ -110,17 +110,18 @@ a {
     font-size: 4.9rem;
     color: transparent;
     background: linear-gradient(90deg, #00dbde, #fc00ff);
-    background-size: 200% auto;
+    background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
     animation: anmTitle 2s linear infinite;
 }
 
 @keyframes anmTitle {
-    0% {
+    0%,
+    100% {
         background-position: 0% center;
     }
-    100% {
+    50% {
         background-position: 200% center;
     }
 }
