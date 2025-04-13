@@ -716,6 +716,7 @@ textarea {
     border-radius: 50%;
 }
 .evaluation_Item .info .name {
+    padding-left: 10px;
     line-height: 1.5;
     color: chartreuse;
     animation: anmName 1.2s linear infinite;
