@@ -6,6 +6,7 @@ const titileTour = document.getElementById("Tour");
 const textModelRobot = document.querySelector(".text_model_robot");
 const evaluationItem = document.querySelectorAll(".evaluation_Item");
 
+// Hàm di chuyển máy bay, bay ngẫu nhiên toàn trình duyệt
 const handlePlan = () => {
     const xPlan = Math.floor(Math.random() * (window.innerWidth - 200));
     const yPlan = Math.floor(Math.random() * (window.innerHeight - 200));
@@ -15,6 +16,8 @@ const handlePlan = () => {
 setInterval(() => {
     handlePlan();
 }, 2000);
+
+// Hiển thị thông báo khi ấn vô robot
 const handleModelRobot = () => {
     const divModel = document.createElement("div");
     const CotentModel = document.querySelector(".content_model_robot");
@@ -47,7 +50,6 @@ if (robot) {
 }
 
 // Hàm xử lý kéo thanh kéo scroll
-
 const handleWaveScroll = () => {
     const top = Math.floor(window.scrollY);
     // console.log(top);

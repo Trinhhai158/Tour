@@ -186,7 +186,7 @@ const searchTours = () => {
         return tour.title.toLowerCase().includes(keyword);
     });
 
-    if (!keyword) {
+    if (keyword === null) {
         showTours(tours);
         return;
     }
@@ -202,7 +202,7 @@ const searchTours = () => {
     }
 };
 
-// Gắn sự kiện
+// Gắn sự kiện khi nhập input
 travelInput.addEventListener("input", searchTours);
 
 // Lưu trữ tour đã đặt
@@ -212,7 +212,12 @@ let bookedTours = JSON.parse(localStorage.getItem("bookedTours")) || [];
 
 const handleBookBtn = (e) => {
     const tourBookId = e.target.dataset.tour_id;
+    // console.log(tourBookId);
+
     const tour = tours.find((t) => t.id == tourBookId);
+
+    alert("chúc mừng bạn đã đặt tour thành công");
+    console.log(tour);
 
     bookedTours.push({
         id: tour.id,
@@ -235,13 +240,13 @@ function renderBookedTours() {
     if (bookedTours.length > 0) {
         container.innerHTML = bookedTours
             .map(
-                (tour) => `
+                (tour, ind) => `
         <tr>
           <td><img src="${tour.image}" alt="${tour.title}" width="80"></td>
           <td>${tour.title}</td>
           <td>$${tour.currentPrice}</td>
           <td>
-            <button class="delete-btn" data-tour-id="${tour.id}">Xoá</button>
+            <button class="delete-btn" data-tour_id_delete="${ind}">Xoá</button>
           </td>
         </tr>
       `
@@ -253,18 +258,19 @@ function renderBookedTours() {
       </tr>`;
     }
 }
-
+renderBookedTours();
 // xoá item trong danh sách tours
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
-        const tourId = e.target.dataset.tourId;
+        const tourId = e.target.dataset.tour_id_delete;
         console.log(tourId);
 
-        bookedTours = bookedTours.filter((tour) => tour.id != tourId);
+        bookedTours = bookedTours.filter((tour, ind) => ind != tourId);
+        alert("Bạn có chắc chắn muốn xoá ?");
         localStorage.setItem("bookedTours", JSON.stringify(bookedTours));
         renderBookedTours();
     }
 });
 
 // Load dữ liệu khi trang web được mở
-document.addEventListener("DOMContentLoaded", renderBookedTours);
+// document.addEventListener("DOMContentLoaded", renderBookedTours);

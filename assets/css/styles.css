@@ -517,7 +517,7 @@ a {
     /* padding: 30px 15px; */
 }
 .contact .item {
-    flex-basis: calc(100% / 2 - 30px);
+    width: calc(100% / 2 - 30px);
     margin: 30px 15px;
     padding: 30px;
     background-color: #fff;
