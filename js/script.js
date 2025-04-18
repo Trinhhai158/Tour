@@ -31,7 +31,7 @@ const handleModelRobot = () => {
     document.body.appendChild(divModel);
 
     setTimeout(() => {
-        textModelRobot.textContent = "Web development : Trịnh Thế Thanh Hải";
+        textModelRobot.textContent = "Chào mừng các bạn tới với tour du lịch";
     }, 1);
 
     // Optional: close modal when clicked
